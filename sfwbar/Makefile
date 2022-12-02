@@ -7,21 +7,16 @@ COMMENT=	Flexible taskbar application for wayland compositors
 WWW=		https://github.com/LBCrion/sfwbar
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libgtk-3.so:x11-toolkits/gtk30 \
-		libcairo.so:graphics/cairo \
-		libcairo.so:graphics/cairo \
-		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2 \
-		libgio-2.0.so:devel/glib20 \
-		libgobject-2.0.so:devel/glib20 \
-		libglib-2.0.so:devel/glib20 \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
+LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libwayland-client.so:graphics/wayland \
 		libjson-c.so:devel/json-c
 RUN_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 
-USES=	meson ninja pkgconfig
+USES=		meson ninja pkgconfig gnome
+USE_GNOME=	gtk30 cairo gdkpixbuf2 glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LBCrion
