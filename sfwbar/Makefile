@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 RUN_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 
 USES=		meson ninja pkgconfig gnome
-USE_GNOME=	gtk30 cairo gdkpixbuf2 glib20
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LBCrion
